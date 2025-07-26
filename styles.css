@@ -7,7 +7,7 @@
   --primary-color: #2b5876;
   --secondary-color: #4e4376;
   --weak-color: #fc8181;
-  --medium-colior: #fbd38d;
+  --medium-color: #fbd38d;
   --strong-color: #68d391;
   --bg-gradient-color: linear-gradient(45deg, var(--primary-color), var(--secondary-color));
   --element-gradient-color: linear-gradient(90deg, var(--primary-color), var(--secondary-color));
@@ -157,11 +157,30 @@ input[type="range"] {
 }
 
 input[type="checkbox"] {
-  accent-color: var(--primary-color);
+  position: relative;
+  appearance: none;
+  border: 2px solid var(--primary-color);
+  border-radius: 5px;
   cursor: pointer;
   width: 20px;
   height: 20px;
   margin-right: 1rem;
+  transition: all 0.3s;
+}
+
+input[type="checkbox"]:checked {
+  background-color: var(--primary-color);
+}
+
+input[type="checkbox"]:checked::after {
+  content: '\2714';
+  /* Checkmark */
+  color: #fff;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  border-radius: 3px;
 }
 
 #generate-btn {
@@ -175,13 +194,16 @@ input[type="checkbox"] {
   cursor: pointer;
   transition: all 0.2s;
   margin-bottom: 2rem;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
 }
 
 #generate-btn:hover {
   transform: translateY(-2px);
+  background: linear-gradient(90deg, var(--primary-color), var(--primary-color));
 }
 
 #generate-btn:active {
+  transform: translateY(0);
   opacity: 0.8;
 }
 
@@ -209,5 +231,5 @@ input[type="checkbox"] {
   width: 50%;
   /* Default width, will be updated dynamically */
   border-radius: 5px;
-  background-color: var(--medium-colior);
+  background-color: var(--medium-color);
 }
