@@ -1,0 +1,213 @@
+/* font import */
+@import url(https://fonts.googleapis.com/css?family=Montserrat:100,200,300,regular,500,600,700,800,900,100italic,200italic,300italic,italic,500italic,600italic,700italic,800italic,900italic);
+
+/* CSS Variables */
+:root {
+  --body-color: #ffffffea;
+  --primary-color: #2b5876;
+  --secondary-color: #4e4376;
+  --weak-color: #fc8181;
+  --medium-colior: #fbd38d;
+  --strong-color: #68d391;
+  --bg-gradient-color: linear-gradient(45deg, var(--primary-color), var(--secondary-color));
+  --element-gradient-color: linear-gradient(90deg, var(--primary-color), var(--secondary-color));
+}
+
+/* Basic reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Montserrat, sans-serif;
+}
+
+body {
+  background: var(--bg-gradient-color);
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #333;
+  padding: 2rem;
+}
+
+.container {
+  background-color: var(--body-color);
+  padding: 2.5rem;
+  border-radius: 1rem;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+  max-width: 450px;
+  width: 100%;
+}
+
+h1 {
+  position: relative;
+  font-size: 1.8rem;
+  text-align: center;
+  padding-bottom: 0.5rem;
+  font-weight: 700;
+  color: var(--primary-color);
+  margin-bottom: 1.5rem;
+}
+
+h1::after {
+  background: var(--element-gradient-color);
+  position: absolute;
+  content: '';
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 50%;
+  height: 3px;
+  background-color: var(--secondary-color);
+  border-radius: 2px;
+}
+
+.password-container {
+  position: relative;
+  margin-bottom: 2rem;
+}
+
+.password-container * {
+  transition: all 0.2s ease;
+}
+
+.password-container input {
+  width: 100%;
+  padding: 0.75rem;
+  border: 1px solid #ccc;
+  border-radius: 0.5rem;
+  font-size: 1.3rem;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+
+}
+
+.password-container input:focus {
+  border-color: var(--primary-color);
+  outline: none;
+}
+
+#copy-btn {
+  position: absolute;
+  right: 0.75rem;
+  top: 50%;
+  transform: translateY(-50%);
+  cursor: pointer;
+  color: #555;
+}
+
+#copy-btn:hover {
+  color: var(--primary-color);
+}
+
+
+.options-container {
+  border-radius: 0.5rem;
+  background-color: #fff;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin: 0 5px;
+  margin-bottom: 2rem;
+  padding: 1.5rem;
+}
+
+.option {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 1rem;
+}
+
+.option:last-child {
+  margin-bottom: 0;
+}
+
+.option label {
+  color: #444;
+  font-weight: 500;
+}
+
+.range-container {
+  width: 60%;
+  display: flex;
+  align-items: center;
+}
+
+.range-container input {
+  margin: 0 1rem;
+}
+
+#length-value {
+  font-weight: 600;
+  color: var(--primary-color);
+  background-color: #f7f7f7;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  padding: 5px;
+}
+
+input[type="range"] {
+  flex: 1;
+  accent-color: var(--primary-color);
+  width: 100%;
+  height: 8px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+input[type="checkbox"] {
+  accent-color: var(--primary-color);
+  cursor: pointer;
+  width: 20px;
+  height: 20px;
+  margin-right: 1rem;
+}
+
+#generate-btn {
+  width: 100%;
+  background: var(--element-gradient-color);
+  color: #fff;
+  border: none;
+  padding: 0.75rem 1.5rem;
+  border-radius: 0.5rem;
+  font-size: 1.2rem;
+  cursor: pointer;
+  transition: all 0.2s;
+  margin-bottom: 2rem;
+}
+
+#generate-btn:hover {
+  transform: translateY(-2px);
+}
+
+#generate-btn:active {
+  opacity: 0.8;
+}
+
+.strength-container label {
+  display: flex;
+  justify-content: space-between;
+  color: #444;
+  margin-bottom: 0.5rem;
+}
+
+.strength-container label span {
+  font-weight: 600;
+}
+
+.strength-meter {
+  width: 100%;
+  height: 10px;
+  border-radius: 5px;
+  background-color: #e0e0e0;
+  overflow: hidden;
+}
+
+.strength-bar {
+  height: 100%;
+  width: 50%;
+  /* Default width, will be updated dynamically */
+  border-radius: 5px;
+  background-color: var(--medium-colior);
+}
