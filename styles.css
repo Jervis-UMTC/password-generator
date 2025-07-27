@@ -74,10 +74,12 @@ h1::after {
 
 .password-container input {
   width: 100%;
-  padding: 0.75rem;
+  padding: 1rem;
   border: 1px solid #ccc;
   border-radius: 0.5rem;
-  font-size: 1.3rem;
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: #666;
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
 
 }
@@ -94,6 +96,7 @@ h1::after {
   transform: translateY(-50%);
   cursor: pointer;
   color: #555;
+  transform: all 0.2s ease;
 }
 
 #copy-btn:hover {
@@ -226,10 +229,8 @@ input[type="checkbox"]:checked::after {
   overflow: hidden;
 }
 
-.strength-bar {
+#strength-bar {
   height: 100%;
-  width: 50%;
   /* Default width, will be updated dynamically */
   border-radius: 5px;
-  background-color: var(--medium-color);
 }
